@@ -2,13 +2,13 @@ Promptly Done Code
 
 This folder contains all the files that have been created and modified by the researcher to produce the Promptly Done App. The language used is Dart with the Flutter Framework. 
 
-This folder does not contain all the Flutter files needed to run as an app - the size and number of files made this impractical to upload to moodle given its limits. These additional files are generated automatically on the creation of a Flutter project and have not been modified since. The complete folder, including all the Flutter files and code produce by the researcher needed to run the app, can be found at the following link. 
+This folder does not contain all the Flutter files needed to run as an app. These additional files are generated automatically on the creation of a Flutter project and have not been modified since. The size and number of the extra Flutter files made it impractical to upload them all to Moodle, given its upload limitations. The complete folder, including all the Flutter files and code produce by the researcher needed to run the app, can be found at the following link. 
 
 https://drive.google.com/file/d/1Eeh2eHUJwsX_e-a20wOMsfetMI5l_HO2/view?usp=sharing
 
 
 
-In order to run this code as an app, it will be necessary to run the code either on an emulator or install it on a smartphone. The code has been tested for Android OS only - it is not guaranteed to work on Apple iOS. 
+In order to run Promptly Done as an app, it will be necessary to run the entire code at the link above either on an emulator or install it on a smartphone. The code has been tested for Android OS only - it is not guaranteed to work on Apple iOS. 
 
 
 
@@ -20,28 +20,27 @@ Open the “uni_project” folder (available at the link above) in an IDE such a
 
 Connect the smartphone to the computer. When prompted, select “allow USB debugging”. To ensure the smartphone has connected successfully, type in the following command. It should appear as one of the connected devices.
 
-“flutter devices”
+    “flutter devices”
 
 To create a release version of the app, enter the following command:
 
-“flutter build apk --release"
+    “flutter build apk --release"
 
 Once the build is complete, install it with the following command:
 
-“flutter install”
+    “flutter install”
 
 The app should now be successfully installed and ready for use. 
 
 
-In order for the smartphone to detect the beacon, ensure that the Beacon Scanner Class code has the target UUID modified to match the UUID of the beacon you wish to detect. 
+In order for the smartphone to detect your Bluetooth Low Energy iBeacon device, ensure that within the beacon_scanner.dart file the targetUUID at line 15 is modified to match the UUID of the beacon you wish to detect. 
 
 
 
 Running the Code on an Android Emulator
 
-It is possible to run the code on an Android emulator. As the emulator cannot detect the beacon, some code has been written for a “Simulate Beacon Detection” button. This can be found at lines 462-478 in the promptly_done.dart file and has been commented out. By adding this code back in, it will allow for the emulator to show how the app will behave if the beacon is detected, including generating a notification pop-up, playing the alarm noise, and marking the activated prompt card grey. 
+It is possible to run the code on an Android emulator. As the emulator cannot detect the beacon, some code has been written to create a “Simulate Beacon Detection” button. This can be found at lines 462-478 in the promptly_done.dart file and has been commented out. By adding this code back in, it will allow for the emulator to show how the app will behave if the beacon is detected, including generating a notification pop-up, playing the alarm noise, and marking the activated prompt card grey once dismissed. 
 
-To install on the emulator, ensure it is recognised by the IDE using the “flutter devices” command. It should appear as one of the connected devices. To run the code on the emulator, enter the following command:
+To install on the emulator, ensure it is recognised by the IDE using the “flutter devices” command as above. It should appear as one of the connected devices. To run the code on the emulator, enter the following command:
 
-“flutter run”
-
+    “flutter run”
